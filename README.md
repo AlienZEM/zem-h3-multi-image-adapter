@@ -2,6 +2,10 @@
 
 Nine upload slots for the **local, stock `MiniMaxH3ReferenceToVideo`** node. Upload between one and nine still images; unused slots produce `None`, which the current stock H3 node skips. No blank images, duplication, API calls, or model changes.
 
+## Included workflow
+
+[**ZEM H3 Multi-Image Adapter workflow**](workflows/zem_h3_multi_image_adapter.json) — the local MiniMax H3 R2V workflow with all nine optional image outputs already connected. Download the JSON using GitHub's **Download raw file** button, then open it in ComfyUI.
+
 ## Install on your pod
 
 Run these commands in your pod terminal (adjust the ComfyUI path):
@@ -13,7 +17,7 @@ git clone https://github.com/AlienZEM/zem-h3-multi-image-adapter.git
 
 1. The installed folder should be `ComfyUI/custom_nodes/zem-h3-multi-image-adapter`.
 2. Restart ComfyUI and refresh its browser page.
-3. Open `workflows/video_minimax_h3_r2v_9_uploads.json` from the extracted folder.
+3. Open `workflows/zem_h3_multi_image_adapter.json` from the extracted folder.
 4. Upload at least one image in **ZEM H3 Multi-Image Adapter**. Wait for uploads to finish before queueing.
 5. Write your prompt using the tags shown beside your images, then run normally.
 
