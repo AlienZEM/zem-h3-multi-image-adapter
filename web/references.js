@@ -14,9 +14,31 @@ app.registerExtension({
         nodeType.prototype.onNodeCreated = function () {
             original?.apply(this, arguments);
             const node = this;
+            const displayName = "ZEM H3 Multi-Image Adapter";
+            const migrateTitle = () => {
+                if (!node.title || ["ZEMH3ReferenceUploads", "ZEM H3 Reference Uploads (1–9)", "ZEM H3 Reference Uploads (1-9)"].includes(node.title)) {
+                    node.title = displayName;
+                }
+            };
+            migrateTitle();
+            // The supplied workflow owns the wiring; retain outputs, hide their UI.
+            node.drawSlots = () => {};
+            node.widgets_start_y = 8;
             const widgets = Array.from({ length: 9 }, (_, i) => node.widgets.find(w => w.name === `image_${i + 1}`));
             // Keep filename widgets serialized for API runs and workflow reloads.
-            widgets.forEach(w => { w.type = "hidden"; w.computeSize = () => [0, -4]; });
+            const hideFilenames = () => widgets.forEach(w => {
+                w.hidden = true;
+                w.options ||= {};
+                w.options.hidden = true;
+                w.type = "hidden";
+                w.computeSize = () => [0, -4];
+                w.draw = () => {};
+                // Some frontend versions use DOM-backed STRING widgets.
+                for (const element of [w.element, w.inputEl]) {
+                    if (element?.style) element.style.display = "none";
+                }
+            });
+            hideFilenames();
             const panel = document.createElement("div");
             Object.assign(panel.style, { padding: "10px", boxSizing: "border-box", background: "#20252d", color: "#eef2f7", font: "12px sans-serif", overflow: "auto", height: "100%" });
             const status = document.createElement("div");
@@ -103,9 +125,15 @@ app.registerExtension({
             node.addDOMWidget("reference_uploads", "zem_h3_uploads", panel, {
                 serialize: false, getMinHeight: () => 600, getMaxHeight: () => 900,
             });
-            node.setSize([560, 800]);
+            node.setSize([560, 660]);
             const configured = node.onConfigure;
-            node.onConfigure = function () { configured?.apply(this, arguments); refresh(); };
+            node.onConfigure = function () {
+                configured?.apply(this, arguments);
+                migrateTitle();
+                hideFilenames();
+                node.widgets_start_y = 8;
+                refresh();
+            };
             refresh();
         };
     },
