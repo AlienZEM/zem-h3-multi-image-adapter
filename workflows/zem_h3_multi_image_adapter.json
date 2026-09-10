@@ -1,4 +1,5 @@
 {
+  "id": "619a08c5-a6bb-402f-adca-5db6cefdac2b",
   "revision": 0,
   "last_node_id": 141,
   "last_link_id": 291,
@@ -15,7 +16,7 @@
         106
       ],
       "flags": {},
-      "order": 22,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -231,7 +232,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 20,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -275,7 +276,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 19,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -350,7 +351,7 @@
         130
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -391,7 +392,7 @@
         140
       ],
       "flags": {},
-      "order": 18,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -454,7 +455,7 @@
         60
       ],
       "flags": {},
-      "order": 17,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -614,7 +615,7 @@
         110
       ],
       "flags": {},
-      "order": 21,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -662,7 +663,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -755,7 +756,7 @@
         670
       ],
       "flags": {},
-      "order": 16,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -920,42 +921,6 @@
       ]
     },
     {
-      "id": 138,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        -1480,
-        6000
-      ],
-      "size": [
-        470,
-        760
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            279
-          ]
-        }
-      ],
-      "title": "Prompt — Read the guide, then write your scene",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "HOW TO USE THIS WORKFLOW\n\n1. Upload 1–9 images in ZEM H3 Multi-Image Adapter. Empty slots are skipped.\n2. Each uploaded image gets a tag such as <Picture 1> or <Picture 2>. Click a tag to copy it.\n3. Use those exact tags to tell H3 what each image should guide: the subject, outfit, setting, or style.\n4. Describe the action, camera movement, and audio you want. Set the duration and resolution, then run.\n\nTags follow the populated slots from left to right, top to bottom. Removing an image renumbers later tags, so check your prompt afterward. Only use tags shown beside your uploads.\n\nREPLACE THIS GUIDE WITH YOUR PROMPT BEFORE RUNNING.\n\nEXAMPLE — ONE IMAGE\nUse <Picture 1> as the reference for the main character. The character walks through a sunlit garden, pauses, and smiles at the camera. Keep their appearance and outfit consistent with the reference. The camera gently tracks backward. Soft birdsong and footsteps, no dialogue.\n\nEXAMPLE — TWO IMAGES (upload two images first)\nUse <Picture 1> for the main character and <Picture 2> for the setting. The character enters the scene, looks around, and walks toward the camera. Preserve the character’s appearance from <Picture 1> and the environment from <Picture 2>. Slow cinematic camera movement, natural ambient sound, no dialogue."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 140,
       "type": "MarkdownNote",
       "pos": [
@@ -967,7 +932,7 @@
         520
       ],
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -983,15 +948,15 @@
       "id": 141,
       "type": "ZEMH3ReferenceUploads",
       "pos": [
-        -1000,
-        5600
+        -660.4533573835868,
+        5674.126416165828
       ],
       "size": [
-        560,
-        800
+        660.4293200554011,
+        743.8073511835537
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1070,6 +1035,8 @@
         }
       ],
       "properties": {
+        "aux_id": "AlienZEM/zem-h3-multi-image-adapter",
+        "ver": "aa00ecd619dd07d2831c4baaff8fb6b36c008bac",
         "Node name for S&R": "ZEMH3ReferenceUploads"
       },
       "widgets_values": [
@@ -1081,8 +1048,45 @@
         "",
         "",
         "",
+        "",
         ""
       ]
+    },
+    {
+      "id": 138,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1166.756141863048,
+        5666.431186958852
+      ],
+      "size": [
+        472.3912273581957,
+        744.4573405987021
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            279
+          ]
+        }
+      ],
+      "title": "Prompt — Read the guide, then write your scene",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "HOW TO USE THIS WORKFLOW\n\n1. Upload 1–9 images in ZEM H3 Multi-Image Adapter. Empty slots are skipped.\n2. Each uploaded image gets a tag such as <Picture 1> or <Picture 2>. Click a tag to copy it.\n3. Use those exact tags to tell H3 what each image should guide: the subject, outfit, setting, or style.\n4. Describe the action, camera movement, and audio you want. Set the duration and resolution, then run.\n\nTags follow the populated slots from left to right, top to bottom. Removing an image renumbers later tags, so check your prompt afterward. Only use tags shown beside your uploads.\n\nREPLACE THIS GUIDE WITH YOUR PROMPT BEFORE RUNNING.\n\nEXAMPLE — ONE IMAGE\nUse <Picture 1> as the reference for the main character. The character walks through a sunlit garden, pauses, and smiles at the camera. Keep their appearance and outfit consistent with the reference. The camera gently tracks backward. Soft birdsong and footsteps, no dialogue.\n\nEXAMPLE — TWO IMAGES (upload two images first)\nUse <Picture 1> for the main character and <Picture 2> for the setting. The character enters the scene, looks around, and walks toward the camera. Preserve the character’s appearance from <Picture 1> and the environment from <Picture 2>. Slow cinematic camera movement, natural ambient sound, no dialogue."
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -1408,10 +1412,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.39344262295081966,
+      "scale": 0.6336432786885257,
       "offset": [
-        3323.3333333333335,
-        -3935.125
+        2271.210987602104,
+        -4875.578098603503
       ]
     },
     "frontendVersion": "1.47.11",
