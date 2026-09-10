@@ -14,7 +14,7 @@ git clone https://github.com/AlienZEM/zem-h3-multi-image-adapter.git
 1. The installed folder should be `ComfyUI/custom_nodes/zem-h3-multi-image-adapter`.
 2. Restart ComfyUI and refresh its browser page.
 3. Open `workflows/video_minimax_h3_r2v_9_uploads.json` from the extracted folder.
-4. Upload at least one image in **ZEM H3 Reference Uploads (1–9)**. Wait for uploads to finish before queueing.
+4. Upload at least one image in **ZEM H3 Multi-Image Adapter**. Wait for uploads to finish before queueing.
 5. Write your prompt using the tags shown beside your images, then run normally.
 
 To update later, run `git -C /workspace/ComfyUI/custom_nodes/zem-h3-multi-image-adapter pull`, then restart ComfyUI.
@@ -22,6 +22,9 @@ To update later, run `git -C /workspace/ComfyUI/custom_nodes/zem-h3-multi-image-
 Requires a current ComfyUI with local MiniMax H3 support and the models from your original workflow. No extra pip dependencies. Does not install or download model weights. Does not work with the MiniMax partner/API node or arbitrary IMAGE-consuming nodes.
 
 ## Behavior
+
+- Connection sockets are hidden. The included workflow is already wired; all underlying links remain intact.
+- Saved nodes with the original default title are renamed automatically. User-customized titles are preserved.
 
 - Nine upload/clear controls with previews and click-to-copy `<Picture n>` tags. Clipboard permissions depend on the browser; a manual-copy message appears if unavailable.
 - Images pack left to right by slot: slots 1, 3, 9 become `<Picture 1>`, `<Picture 2>`, `<Picture 3>`.
